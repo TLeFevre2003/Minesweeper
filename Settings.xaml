@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SettingsPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Choose Board Size" HorizontalOptions="Center" FontSize="20" Margin="0,0,0,20" />
+
+        <Entry Placeholder="Number of Rows" x:Name="RowsEntry" Keyboard="Numeric" Margin="0,0,0,10" />
+        <Entry Placeholder="Number of Columns" x:Name="ColumnsEntry" Keyboard="Numeric" Margin="0,0,0,20" />
+        <Entry Placeholder="Number of Bombs" x:Name="BombsEntry" Keyboard="Numeric" Margin="0,0,0,20" />
+
+        <!-- Labels to display the row and column values -->
+        <Label Text="{Binding Source={x:Reference RowsEntry}, Path=Text, StringFormat='Rows = {0}'}" HorizontalOptions="Center" FontSize="16" Margin="0,0,0,10" />
+        <Label Text="{Binding Source={x:Reference ColumnsEntry}, Path=Text, StringFormat='Columns = {0}'}" HorizontalOptions="Center" FontSize="16" Margin="0,0,0,10" />
+
+        <Button Text="Start Game" Clicked="StartGame_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="#007AFF" TextColor="White" />
+
+    </StackLayout>
+
+
+</ContentPage>
